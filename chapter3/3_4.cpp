@@ -5,11 +5,13 @@ using namespace std;
 int main()
 {
 	string a, b;
-	cin >> a >> b;
-	if (a > b)
-		cout << a << endl;
-	else if (a < b)
-		cout << b << endl;
+	while(cin >> a >> b)
+	{
+		if (a == b)
+			cout << "Two strings are not equal!" << endl;
+		else
+			cout << "The larger string is " << ((a > b) ? a : b) << endl;
+	}
 
 	return 0;
 }
