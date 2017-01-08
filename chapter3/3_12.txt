@@ -1,0 +1,3 @@
+(a) vector<vector<int>> ivec;  //legal
+(b) vector<string> svec = ivec;  //ilegal, different types
+(c) vector<string> svec(10, "null");  //legal
