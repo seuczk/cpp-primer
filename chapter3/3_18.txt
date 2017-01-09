@@ -1,0 +1,8 @@
+ilegal
+
+vector<int> ivec;
+ivec.push_back(42);
+
+or
+
+vector<int> ivec{42};
