@@ -1,0 +1,5 @@
+unsigned bug_size = 1024;
+(a) int ia[buf_size];    //ilegal, buf_size is not const
+(b) int ia[4*7 - 14];    //legal
+(c) int ia[txt_size()];  //ilegal, buf_size is not const
+(d) char st[11] = "fundamental";  //ilegal, string is too long to put into the char[]

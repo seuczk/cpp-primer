@@ -1,0 +1,3 @@
+(a) size is fixed at compling time, and you cannot add data into an array arbitrarily
+(b) no api as that of vector
+(c) more difficult to use compared with vector, easy to produce bugs
