@@ -19,3 +19,24 @@ ix and ptr have the same function. The loop just goes through the array.
 Because of the most lowest precedence of the comma operator, the expression is same as:
 	(someValue ? ++x, ++y : --x), --y
 
+4.35
+Given the following definitions, char cval; int ival; unsigned int ui; float fval; double dval;
+identify the implicit type conversions, if any, taking place:
+
+cval = 'a' + 3; // 'a' promoted to int, then the result of ('a' + 3)(int) converted to char.
+fval = ui - ival * 1.0; // ival converted to double , ui also converted to double. then that double converted(by truncation) to float.
+dval = ui * fval; // ui promoted to float. then that float converted to double.
+cval = ival + fval + dval;  // ival converted to float, then that float and fval converted to double. At last, that double converted to char(by truncation).
+
+4.36
+Assuming i is an int and d is a double write the expression i *= d so that it does integral, rather than floating-point, multiplication.
+i *= static_cast<int>(d);
+
+4.37
+Rewrite each of the following old-style casts to use a named cast:
+int i; double d; const string *ps; char *pc; void *pv;
+
+(a)pv = (void*)ps; // pv = const_cast<string*>(ps); or pv = static_cast<void*>(const_cast<string*>(ps));
+(b)i = int(*pc);   // i = static_cast<int>(*pc);
+(c)pv = &d;        // pv = static_cast<void*>(&d);
+(d)pc = (char*)pv; // pc = reinterpret_cast<char*>(pv);
